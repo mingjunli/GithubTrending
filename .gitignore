@@ -1,0 +1,4 @@
+.avoscloud/
+.idea/
+
+*.pyc
