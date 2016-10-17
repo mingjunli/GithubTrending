@@ -1,6 +1,8 @@
 from flask import Flask
+from views.github import github_view
 
 app = Flask(__name__)
+app.register_blueprint(github_view, url_prefix="/api/github")
 
 
 @app.route('/')
@@ -9,4 +11,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
