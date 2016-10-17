@@ -47,10 +47,10 @@ def get_trending_developers(opts):
     url = TRENDING_DEV_URL
 
     if language:
-        url += '?l={}'.format(language)
+        url = url + '/' + language
 
     if since:
-        url += '&since={}'.format(since)
+        url += '?since={}'.format(since)
 
     print url
     response, code = read_page(url)

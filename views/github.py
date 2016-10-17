@@ -32,9 +32,9 @@ def trending(lang=None):
 
 
 @github_view.route("/trending/developers")
-def trending_developers():
+@github_view.route("/trending/developers/<lang>")
+def trending_developers(lang=None):
 
-    lang = request.args.get('lang', None)
     since = request.args.get('since', None)
 
     opts = {
