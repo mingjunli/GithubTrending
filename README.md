@@ -29,7 +29,7 @@ avatar|owner's avatar url|String|url string
 owner|owner name|String|/
 repo|repo name|String|/
 desc|repo description|String|/
-stars|stars during the time span|int|/
+stars|stars during the time span|String|/
 link|repo address|String|/
 
 Example:
