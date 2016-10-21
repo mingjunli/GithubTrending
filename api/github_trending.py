@@ -78,7 +78,9 @@ def parser_repos(response):
         stars = 0
 
         if meta:
-            stars = int(div.find('strong', {'class': 'meta'}).contents[0].strip('\n'))
+            stars = div.find('strong', {'class': 'meta'}).contents[0].strip('\n').lstrip().rstrip()
+        else:
+            stars = "0"
 
         desc = parser_desc(div.find('div', {'class': 'repo-description'}))
 
