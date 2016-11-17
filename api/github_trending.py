@@ -72,7 +72,7 @@ def parser_repos(response):
         name_string = div.find('strong', {'class': 'list-item-title'}).string
         owner = name_string.split('/')[0]
         repo = name_string.split('/')[1]
-        link = GITHUB + name_string
+        link = GITHUB + "/" + name_string
 
         meta = div.find('strong', {'class': 'meta'})
         stars = 0
