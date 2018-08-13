@@ -68,7 +68,10 @@ def parser_repos(response):
     soup = BeautifulSoup(response.text, "lxml")
 
     for li in soup.find_all('li', {'class': 'col-12 d-block width-full py-4 border-bottom'}):
-        avatar = li.find('img', {'class': 'avatar mb-1'})['src']
+        avatar_img = li.find('img', {'class': 'avatar mb-1'})
+        if avatar_img:
+            avatar = avatar_img['src']
+
         name_div = li.find('div', {'class': 'd-inline-block col-9 mb-1'})
         name_string = name_div.find('a', href=True)['href']
         # name_string = li.find('span', {'class': 'text-normal'}).string
@@ -112,7 +115,10 @@ def parser_developers(response):
 
     soup = BeautifulSoup(response.text, "lxml")
     for li in soup.find_all('li', {'class': 'd-sm-flex flex-justify-between border-bottom border-gray-light py-3'}):
-        avatar = li.find('img', {'class': 'rounded-1'})['src']
+        avatar_img = li.find('img', {'class': 'rounded-1'})['src']
+        if avatar_img:
+            avatar = avatar_img['src']
+
         href = li.find('a', {'class': 'd-inline-block'})['href']
         link = GITHUB + href
         name = href[1:]
