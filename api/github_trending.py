@@ -111,17 +111,16 @@ def parser_developers(response):
     developers = []
 
     soup = BeautifulSoup(response.text, "lxml")
-    for div in soup.find_all('div', {'class': 'list-item with-avatar'}):
-        avatar = div.find('img', {'class': 'avatar'})['src']
-        href = div.find('a')['href']
-        full_name = parser_developer_name(div.find('strong', {'class': 'list-item-title'}))
+    for li in soup.find_all('li', {'class': 'd-sm-flex flex-justify-between border-bottom border-gray-light py-3'}):
+        avatar = li.find('img', {'class': 'rounded-1'})['src']
+        href = li.find('a', {'class': 'd-inline-block'})['href']
         link = GITHUB + href
         name = href[1:]
 
         developers.append({
             'avatar': avatar,
             'name': name,
-            'full_name': full_name,
+            'full_name': "",
             'link': link
         })
 
