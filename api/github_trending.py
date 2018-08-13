@@ -67,22 +67,23 @@ def parser_repos(response):
 
     soup = BeautifulSoup(response.text, "lxml")
 
-    for div in soup.find_all('div', {'class': 'list-item with-avatar'}):
-        avatar = div.find('img', {'class': 'avatar'})['src']
-        name_string = div.find('strong', {'class': 'list-item-title'}).string
-        owner = name_string.split('/')[0]
-        repo = name_string.split('/')[1]
-        link = GITHUB + "/" + name_string
+    for li in soup.find_all('li', {'class': 'col-12 d-block width-full py-4 border-bottom'}):
+        avatar = li.find('img', {'class': 'avatar mb-1'})['src']
+        name_div = li.find('div', {'class': 'd-inline-block col-9 mb-1'})
+        name_string = name_div.find('a', href=True)['href']
+        # name_string = li.find('span', {'class': 'text-normal'}).string
+        owner = name_string.split('/')[1]
+        repo = name_string.split('/')[2]
+        link = GITHUB + name_string
 
-        meta = div.find('strong', {'class': 'meta'})
-        stars = 0
+        meta = li.find('div', {'class': 'f6 text-gray mt-2'})
 
         if meta:
-            stars = div.find('strong', {'class': 'meta'}).contents[0].strip('\n').lstrip().rstrip()
+            stars = li.find('a', {'class': 'muted-link d-inline-block mr-3'}).text.replace('\n', '').strip(' ')
         else:
             stars = "0"
 
-        desc = parser_desc(div.find('div', {'class': 'repo-description'}))
+        desc = parser_desc(li.find('div', {'class': 'py-1'}))
 
         repos.append({
             'owner': owner,
