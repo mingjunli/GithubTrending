@@ -61,7 +61,7 @@ Pillow==4.2.1
 protobuf==3.5.2.post1
 pycrypto==2.6.1
 pyflakes==1.0.0
-Pygments==2.2.0
+Pygments==2.7.4
 pyparsing==2.2.0
 pytablereader==0.13.3
 python-dateutil==2.6.1
