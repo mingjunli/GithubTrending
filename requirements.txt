@@ -40,7 +40,7 @@ leancloud==2.1.5
 Logbook==1.1.0
 lxml==3.3.3
 Markdown==2.6.11
-markdown2==2.3.4
+markdown2==2.4.0
 MarkupSafe==1.0
 matplotlib==2.0.2
 mbstrdecoder==0.2.2
