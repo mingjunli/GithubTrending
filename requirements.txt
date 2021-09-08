@@ -57,7 +57,7 @@ pathlib==1.0.1
 pathvalidate==0.16.1
 pbr==4.0.2
 pep8==1.7.0
-Pillow==4.2.1
+Pillow==8.3.2
 protobuf==3.5.2.post1
 pycrypto==2.6.1
 pyflakes==1.0.0
