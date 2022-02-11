@@ -58,7 +58,7 @@ pathvalidate==0.16.1
 pbr==4.0.2
 pep8==1.7.0
 Pillow==4.2.1
-protobuf==3.5.2.post1
+protobuf==3.15.0
 pycrypto==2.6.1
 pyflakes==1.0.0
 Pygments==2.2.0
