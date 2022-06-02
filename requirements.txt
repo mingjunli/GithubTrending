@@ -26,7 +26,7 @@ gevent==1.2.2
 gevent-websocket==0.10.1
 greenlet==0.4.12
 grpcio==1.11.0
-html5lib==0.9999999
+html5lib==0.99999999
 httpstat==1.2.1
 idna==2.5
 imageio==2.2.0
